@@ -1,0 +1,125 @@
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class HardcodedDTreeFactory {
+
+    public static void main(String[] args) {
+        HardcodedDTreeFactory factory = new HardcodedDTreeFactory();
+        
+        System.out.println("--------------------------");
+        DTreeNode tree2 = factory.hardcode2PersonaTree();
+        System.out.println("2-persona tree:\n" + tree2);
+      
+        System.out.println("--------------------------");
+        DTreeNode tree4 = factory.hardcode4PersonaTree();
+        System.out.println("4-persona tree:\n" + tree4);
+        
+        System.out.println("--------------------------");
+        DTreeNode tree9 = factory.hardcode9PersonaTree();
+        System.out.println("9-persona tree:\n" + tree9);
+    }
+    
+    public DTreeNode hardcode2PersonaTree() {
+        // Approach #1
+        DTreeNode tie = new DTreeNode("tie", false);
+        DTreeNode bear = new DTreeNode("Bear", true);
+        DTreeNode tiger = new DTreeNode("Tiger", true);
+        tie.setNodeForNo(bear);
+        tie.setNodeForYes(tiger);
+        
+        /*
+        // Approach #2
+        DTreeNode bear = new DTreeNode("Bear", true);
+        DTreeNode tiger = new DTreeNode("Tiger", true);
+        DTreeNode tie = new DTreeNode("tie", false, bear, tiger);
+        */
+        
+        return tie;
+    }
+     
+     public DTreeNode hardcode4PersonaTree(){
+         DTreeNode clothes = new DTreeNode("clothes", false);
+         DTreeNode armUp = new DTreeNode("armUp", false);
+         DTreeNode tie = new DTreeNode("tie" , false );
+         DTreeNode bear = new DTreeNode("Bear" , true );
+         DTreeNode dog = new DTreeNode("Dog" , true );
+         DTreeNode unicorn = new DTreeNode("Unicorn" , true );
+         DTreeNode tiger = new DTreeNode("Tiger" , true );
+         
+         clothes.setNodeForNo (armUp);
+         clothes.setNodeForYes ( tie);
+         tie.setNodeForNo (bear);
+         tie.setNodeForYes (tiger);
+         armUp.setNodeForNo (dog);
+         armUp.setNodeForYes (unicorn);
+         
+         return clothes;
+     }
+     
+     public DTreeNode hardcode9PersonaTree(){
+     DTreeNode tie = new DTreeNode("tie" , false );
+     DTreeNode tie2 = new DTreeNode ( "tie" , false ) ;
+     DTreeNode walks2 = new DTreeNode ( "walks" , false);
+     DTreeNode bear = new DTreeNode("Bear" , true );
+     DTreeNode tiger = new DTreeNode("Tiger" , true );
+     DTreeNode parrot = new DTreeNode("Parrot" , true );
+     DTreeNode dog = new DTreeNode("Dog" , true );
+     DTreeNode panda = new DTreeNode("Panda" , true );
+     DTreeNode unicorn = new DTreeNode("Unicorn" , true );
+     DTreeNode lion = new DTreeNode("Lion" , true );
+     DTreeNode shark = new DTreeNode("Shark" , true );
+     DTreeNode fox = new DTreeNode("Fox" , true );
+     DTreeNode clothes = new DTreeNode("clothes", false);
+     DTreeNode armUp = new DTreeNode("armUp", false);
+     DTreeNode eating = new DTreeNode("eating", false);
+     DTreeNode walks = new DTreeNode("walks", false);
+     DTreeNode belt = new DTreeNode("belt", false);
+     DTreeNode armUp2 = new DTreeNode ( "armUP", false);
+     
+     /*tie.setNodeForYes ( armUp);
+     tie.setNodeForNo ( clothes);
+     
+     armUp.setNodeForYes ( belt);
+     armUp.setNodeForNo (tiger);
+     
+     belt.setNodeForYes ( walks);
+     belt.setNodeForNo ( lion);
+     
+     walks.setNodeForYes ( shark);
+     walks.setNodeForNo ( fox);
+     
+     clothes.setNodeForYes ( bear) ;
+     clothes.setNodeForNo (armUp2);
+     
+     armUp2.setNodeForYes( unicorn);
+     armUp2.setNodeForNo ( eating);
+     
+     eating.setNodeForYes ( panda);
+     eating.setNodeForNo ( dog); */
+     
+     
+     
+     
+        
+        armUp.setNodeForNo(clothes);
+        armUp.setNodeForYes(belt);
+        clothes.setNodeForNo(eating);
+        clothes.setNodeForYes(tie);
+        eating.setNodeForNo(walks);
+        eating.setNodeForYes(panda);
+        walks.setNodeForNo(parrot);
+        walks.setNodeForYes(dog);
+        tie.setNodeForYes(tiger);
+        tie.setNodeForNo(bear);
+        belt.setNodeForYes(walks2); 
+        belt.setNodeForNo(tie2);      
+        walks2.setNodeForNo(shark);   
+        walks2.setNodeForYes(fox);     
+        tie2.setNodeForYes(lion);      
+        tie2.setNodeForNo(unicorn);   
+
+        return armUp;
+    }
+    
+}
